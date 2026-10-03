@@ -1,5 +1,5 @@
 /* ==========================================================
-   WIN KMT INTERNET SOLUTION - INTERACTIVE ENGINE
+   KMT INTERNET SOLUTION - INTERACTIVE & SCROLL ANIMATION ENGINE
    ========================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       navLinks.classList.toggle('open');
     });
 
@@ -18,11 +19,34 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.remove('open');
       });
     });
+
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        navLinks.classList.remove('open');
+      }
+    });
   }
 
-  // 2. Animated Numerical Counters
+  // 2. SCROLL REVEAL ANIMATIONS (SMOOTH FLOAT ON SCROLL)
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // 3. Animated Numerical Counters (Triggered on Scroll)
   const counters = document.querySelectorAll('.counter');
-  let animated = false;
+  let countersAnimated = false;
 
   const runCounters = () => {
     counters.forEach(counter => {
@@ -44,19 +68,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !animated) {
-        runCounters();
-        animated = true;
-      }
-    });
-  }, { threshold: 0.4 });
+  const counterTrigger = document.querySelector('.hero-main-card');
+  if (counterTrigger) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !countersAnimated) {
+          runCounters();
+          countersAnimated = true;
+        }
+      });
+    }, { threshold: 0.3 });
+    counterObserver.observe(counterTrigger);
+  }
 
-  const metricsCard = document.querySelector('.hero-main-card');
-  if (metricsCard) observer.observe(metricsCard);
-
-  // 3. Services Tabs Toggle (Ventas vs Técnica)
+  // 4. Services Tabs Toggle (Ventas vs Técnica)
   const tabButtons = document.querySelectorAll('.tab-button');
   const tabPanels = document.querySelectorAll('.tab-content-panel');
 
@@ -71,11 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetPane = document.getElementById(targetId);
       if (targetPane) {
         targetPane.classList.add('active');
+        // trigger animation on new tab elements
+        targetPane.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
       }
     });
   });
 
-  // 4. Interactive Simulator / Quote Form Engine
+  // 5. Interactive Simulator / Quote Form Engine
   const typeButtons = document.querySelectorAll('.btn-type-opt');
   let currentServiceType = 'hogar';
 
@@ -122,23 +149,28 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = `Hola KMT Internet Solución, mi nombre es *${name}*.
 
 Deseo cotizar:
-📌 *Tipo de Servicio:* ${currentServiceType.toUpperCase()}
-🏙️ *Ciudad / Sede:* ${city}
-⚡ *Plan / Detalle:* ${plan}
-📞 *Teléfono:* ${phone}
+` +
+        `📌 *Tipo de Servicio:* ${currentServiceType.toUpperCase()}
+` +
+        `🏙️ *Ciudad / Sede:* ${city}
+` +
+        `⚡ *Plan / Detalle:* ${plan}
+` +
+        `📞 *Teléfono:* ${phone}
 
-Vengo de la página web de KMT Internet Solución (Aliado de Visual Connections). ¿Podrían brindarme asesoría y validar mi cobertura?`;
+` +
+        `Vengo de la página web de KMT Internet Solución (Aliado de Visual Connections). ¿Podrían brindarme asesoría y validar mi cobertura?`;
 
       const encodedUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.open(encodedUrl, '_blank');
     });
   }
 
-  // 5. Sticky Header Effect
+  // 6. Header Shadow on scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+    if (window.scrollY > 30) {
+      navbar.style.boxShadow = '0 4px 20px rgba(0, 85, 212, 0.08)';
     } else {
       navbar.style.boxShadow = 'none';
     }
