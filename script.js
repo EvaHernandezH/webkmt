@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold: 0.12,
+    threshold: 0.1,
     rootMargin: '0px 0px -40px 0px'
   });
 
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = parseFloat(counter.getAttribute('data-target'));
       const isDecimal = target % 1 !== 0;
       let count = 0;
-      const speed = target / 40;
+      const speed = target / 35;
 
       const updateCount = () => {
         count += speed;
@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
           countersAnimated = true;
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.25 });
     counterObserver.observe(counterTrigger);
   }
 
-  // 4. Services Tabs Toggle (Ventas vs Técnica)
+  // 4. Services Tabs Toggle (Técnica vs Ventas)
   const tabButtons = document.querySelectorAll('.tab-button');
   const tabPanels = document.querySelectorAll('.tab-content-panel');
 
@@ -148,32 +148,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const whatsappNumber = '51922694968';
       const message = `Hola KMT Internet Solución, mi nombre es *${name}*.
 
-Deseo cotizar:
-` +
-        `📌 *Tipo de Servicio:* ${currentServiceType.toUpperCase()}
-` +
-        `🏙️ *Ciudad / Sede:* ${city}
-` +
-        `⚡ *Plan / Detalle:* ${plan}
-` +
-        `📞 *Teléfono:* ${phone}
+Deseo cotizar servicio de telecomunicaciones:
+📌 *Tipo:* ${currentServiceType.toUpperCase()}
+🏙️ *Ciudad / Sede:* ${city}
+⚡ *Plan:* ${plan}
+📞 *Teléfono:* ${phone}
 
-` +
-        `Vengo de la página web de KMT Internet Solución (Aliado de Visual Connections). ¿Podrían brindarme asesoría y validar mi cobertura?`;
+Por favor coordinar disponibilidad y cobertura.`;
 
       const encodedUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
       window.open(encodedUrl, '_blank');
     });
   }
 
-  // 6. Header Shadow on scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      navbar.style.boxShadow = '0 4px 20px rgba(0, 85, 212, 0.08)';
-    } else {
-      navbar.style.boxShadow = 'none';
-    }
+  // 6. Smooth Scroll on In-Page Anchors
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetHref = this.getAttribute('href');
+      if (targetHref.length > 1) {
+        const targetElement = document.querySelector(targetHref);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
   });
 
 });
