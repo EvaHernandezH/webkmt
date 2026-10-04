@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const counterTrigger = document.querySelector('.hero-main-card');
+  const counterTrigger = document.querySelector('.hero-main-card') || document.querySelector('.metrics-grid');
   if (counterTrigger) {
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

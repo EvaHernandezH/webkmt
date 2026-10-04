@@ -74,11 +74,13 @@
     </div>
   </header>
 
-  <!-- Hero Section with Modern Family Lifestyle Background -->
+    <!-- Hero Section with Modern Presentation Video Window Directly Under Text -->
   <section class="hero-section" id="inicio">
     <div class="hero-bg-overlay"></div>
-    <div class="container hero-grid">
-      <div class="hero-content reveal">
+    <div class="container hero-container-layout">
+      
+      <!-- Top: Hero Text Header (Requested Text) -->
+      <div class="hero-header-block text-center reveal">
         <div class="hero-badge">
           <span class="badge-icon">⚡</span>
           <span>Aliado Estratégico de Visual Connections</span>
@@ -91,77 +93,48 @@
         <p class="hero-description">
           En <strong>KMT Internet Solución</strong> unificamos la máxima precisión técnica en <strong>instalaciones FTTH, empalmes y soporte 24/7</strong> con una fuerza comercial especializada en acelerar el crecimiento de los principales operadores del Perú.
         </p>
-
-        <!-- Lifestyle Promo Highlights Chip (Estilo Banner Familiar) -->
-        <div class="hero-promo-pill reveal reveal-delay-1">
-          <div class="pill-item">
-            <span class="pill-icon">🚀</span>
-            <span><strong>100% Simétrico</strong> Subida y Bajada</span>
-          </div>
-          <div class="pill-divider"></div>
-          <div class="pill-item">
-            <span class="pill-icon">📶</span>
-            <span><strong>Ultra Cobertura</strong> Wi-Fi 6</span>
-          </div>
-          <div class="pill-divider"></div>
-          <div class="pill-item">
-            <span class="pill-icon">🛡️</span>
-            <span><strong>Soporte 24/7</strong> Certificado</span>
-          </div>
-        </div>
-
-        <div class="hero-actions">
-          <a href="#simulador" class="btn btn-primary btn-lg shadow-blue">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m13 2-2 10h7L9 22l2-10H4L13 2z"/></svg>
-            Cotizar Servicio Ahora
-          </a>
-          <a href="#en-accion" class="btn btn-secondary btn-lg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-            Ver Video en Acción
-          </a>
-        </div>
-
-        <!-- Trust Badges -->
-        <div class="hero-trust">
-          <p class="trust-title">OPERADORES Y RESPALDO INSTITUCIONAL:</p>
-          <div class="trust-chips">
-            <div class="trust-chip">
-              <span class="chip-dot dot-cyan"></span>
-              <div>
-                <strong>WIN INTERNET</strong>
-                <small>Partner &amp; Canal Oficial</small>
-              </div>
-            </div>
-            <div class="trust-chip">
-              <span class="chip-dot dot-blue"></span>
-              <div>
-                <strong>ENTEL PERÚ</strong>
-                <small>Instalaciones &amp; Red</small>
-              </div>
-            </div>
-            <div class="trust-chip">
-              <span class="chip-dot dot-navy"></span>
-              <div>
-                <strong>VISUAL CONNECTIONS</strong>
-                <small>Socio Operativo</small>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <!-- Hero Visual Card with dynamic float & stats -->
-      <div class="hero-visual reveal reveal-delay-2">
-        <div class="white-card hero-main-card">
-          <div class="card-status-bar">
-            <div class="status-left">
-              <span class="pulse-green"></span>
-              <strong>Despliegue Operativo Activo</strong>
+      <!-- Main Presentation Window: Video Directly Underneath Text + Strategic Operational Hub -->
+      <div class="hero-presentation-grid reveal reveal-delay-1">
+        
+        <!-- Left: The Video Presentation Window (Sleek Smartphone Frame, 100% visible, no crop) -->
+        <div class="hero-video-window-col">
+          <div class="video-window-card">
+            <div class="video-window-header">
+              <div class="window-dots">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+              </div>
+              <div class="window-title-badge">
+                <span class="pulse-live"></span>
+                <strong>VENTANA DE PRESENTACIÓN • KMT EN ACCIÓN</strong>
+              </div>
             </div>
-            <span class="badge-live">COBERTURA PERÚ</span>
-          </div>
 
-          <!-- Animated Metrics -->
+            <!-- Video Player (Autoplay muted loop playsinline controls) -->
+            <div class="hero-video-frame">
+              <video id="heroMainVideo" controls playsinline loop muted autoplay class="hero-vertical-video" poster="assets/equipo-campo-1.png">
+                <source src="assets/video-kmt.mp4" type="video/mp4">
+                <source src="video-kmt.mp4" type="video/mp4">
+                Tu navegador no soporta video HTML5.
+              </video>
+            </div>
+
+            <div class="video-window-caption">
+              <span class="caption-icon">🏆</span>
+              <div>
+                <strong>Formación Comercial: Generando Expertos en Fibra Óptica</strong>
+                <p>Capacitación continua y excelencia en ventas para los operadores líderes del Perú.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Metrics Grid, Core Features & Quick Actions -->
+        <div class="hero-info-col">
+          <!-- Animated Metrics Grid -->
           <div class="metrics-grid">
             <div class="metric-card">
               <div class="metric-number"><span class="counter" data-target="99.6">0</span>%</div>
@@ -181,13 +154,13 @@
             </div>
           </div>
 
-          <!-- Split Features List -->
+          <!-- Dual Features -->
           <div class="dual-feature-boxes">
             <div class="feature-box box-tech">
               <div class="box-icon icon-blue">🛠️</div>
               <div class="box-text">
                 <h4>Frente Técnico &amp; Cuadrillas</h4>
-                <p>Instalaciones FTTH, empalmes por fusión y resolución de averías en tiempo récord.</p>
+                <p>Instalaciones FTTH, empalmes ópticos por fusión y resolución de averías en tiempo récord.</p>
               </div>
             </div>
 
@@ -195,19 +168,54 @@
               <div class="box-icon icon-cyan">📈</div>
               <div class="box-text">
                 <h4>Fuerza Comercial &amp; Ventas</h4>
-                <p>Ventas en terreno puerta a puerta, promotores y contact center de alta conversión.</p>
+                <p>Ventas en terreno puerta a puerta (D2D), promotores y contact center de alta conversión.</p>
               </div>
             </div>
           </div>
 
-          <div class="hero-card-footer">
-            <a href="https://wa.me/51922694968?text=Hola%20KMT,%20deseo%20m%C3%A1s%20informaci%C3%B3n" target="_blank" class="btn-card-action">
-              <span>Hablar con un Asesor por WhatsApp</span>
-              <span class="arrow-icon">→</span>
+          <!-- Action Buttons -->
+          <div class="hero-actions-row">
+            <a href="#simulador" class="btn btn-primary btn-lg shadow-blue">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m13 2-2 10h7L9 22l2-10H4L13 2z"/></svg>
+              Cotizar Servicio Ahora
+            </a>
+            <a href="https://wa.me/51922694968?text=Hola%20KMT,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios" target="_blank" class="btn btn-secondary btn-lg">
+              💬 Atención WhatsApp
             </a>
           </div>
+
+          <!-- Trust chips -->
+          <div class="hero-trust">
+            <p class="trust-title">RESPALDO CORPORATIVO Y OPERADORES LÍDERES:</p>
+            <div class="trust-chips">
+              <div class="trust-chip">
+                <span class="chip-dot dot-cyan"></span>
+                <div>
+                  <strong>WIN INTERNET</strong>
+                  <small>Partner &amp; Canal Oficial</small>
+                </div>
+              </div>
+              <div class="trust-chip">
+                <span class="chip-dot dot-blue"></span>
+                <div>
+                  <strong>ENTEL PERÚ</strong>
+                  <small>Instalaciones &amp; Red</small>
+                </div>
+              </div>
+              <div class="trust-chip">
+                <span class="chip-dot dot-navy"></span>
+                <div>
+                  <strong>VISUAL CONNECTIONS</strong>
+                  <small>Socio Operativo</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
       </div>
+
     </div>
   </section>
 
@@ -367,72 +375,58 @@
     </div>
   </section>
 
-    <!-- VIDEO SHOWCASE SECTION (FORMACION COMERCIAL - GENERANDO EXPERTAS EN FIBRA OPTICA) -->
-  <section class="video-showcase-section" id="capacitacion">
+      <!-- COMMERCIAL ACADEMY & TALENT FORMATION SECTION -->
+  <section class="academy-section" id="capacitacion">
     <div class="container">
-      <div class="video-section-box reveal">
+      <div class="academy-box reveal">
         <div class="section-header text-center">
           <div class="section-tag"><span class="badge-dot"></span> DIVISIÓN COMERCIAL &amp; TALENTO</div>
-          <h2 class="section-title">Capacitación y Formación en Ventas: <span class="text-blue-gradient">Generando Expertos en Fibra Óptica</span></h2>
+          <h2 class="section-title">Academia de Ventas KMT: <span class="text-blue-gradient">Generando Expertos en Fibra Óptica</span></h2>
           <p class="section-subtitle">Conoce cómo preparamos y empoderamos a nuestra fuerza de ventas. Asesores comerciales altamente capacitados en telecomunicaciones, atención al cliente y técnicas de cierre de alto impacto.</p>
         </div>
 
-        <div class="video-showcase-split">
-          <!-- Left: Vertical Smartphone Video Frame (Completamente visible de pies a cabeza sin cortes) -->
-          <div class="video-frame-outer">
-            <div class="phone-speaker-bar"></div>
-            <div class="video-vertical-wrapper">
-              <video id="kmtMainVideo" controls playsinline loop muted class="vertical-full-video">
-                <source src="assets/video-kmt.mp4" type="video/mp4">
-                <source src="video-kmt.mp4" type="video/mp4">
-                Tu navegador no soporta reproducción de video HTML5.
-              </video>
-            </div>
+        <div class="academy-pillars-grid">
+          <div class="pillar-card reveal">
+            <div class="pillar-icon">👩‍💼</div>
+            <h3>Formación Técnica y Dominio de Producto</h3>
+            <p>Nuestros asesores dominan la tecnología FTTH, velocidades simétricas y ventajas de red para responder cualquier consulta con solvencia y seguridad.</p>
+            <ul class="pillar-points">
+              <li>Diferenciales reales vs cobre/HFC</li>
+              <li>Pruebas de velocidad y asesoría Wi-Fi 6</li>
+              <li>Planes a la medida para hogares y PYMES</li>
+            </ul>
           </div>
 
-          <!-- Right: Highlights & Commercial Training Information -->
-          <div class="video-side-details">
-            <div class="video-side-badge">ACADEMIA DE VENTAS KMT</div>
-            <h3 class="video-side-title">Formación Continua y Excelencia Comercial</h3>
-            <p class="video-side-text">
-              En <strong>KMT Internet Solución</strong> el éxito comercial nace de la preparación. Desarrollamos programas de entrenamiento continuo donde formamos a auténticos <strong>expertos en fibra óptica</strong>, combinando conocimiento técnico de red con persuasión, dinamismo y vocación de servicio.
-            </p>
-
-            <div class="video-features-list">
-              <div class="vfeature-item">
-                <div class="vfeature-icon">👩‍💼</div>
-                <div>
-                  <strong>Formación Técnica y Dominio de Producto (FTTH)</strong>
-                  <p>Nuestros asesores dominan la tecnología de fibra óptica simétrica y beneficios reales para resolver cualquier duda del cliente con seguridad.</p>
-                </div>
-              </div>
-
-              <div class="vfeature-item">
-                <div class="vfeature-icon">💡</div>
-                <div>
-                  <strong>Técnicas de Venta Consultiva y Cierre Efectivo</strong>
-                  <p>Entrenamiento vivencial en prospección puerta a puerta (D2D), contact center, superación de objeciones y captación de altas masivas.</p>
-                </div>
-              </div>
-
-              <div class="vfeature-item">
-                <div class="vfeature-icon">⭐</div>
-                <div>
-                  <strong>Motivación, Liderazgo y Crecimiento Profesional</strong>
-                  <p>Espacios de integración que fomentan la confianza, el trabajo en equipo y el desarrollo de carreras exitosas con atractivas comisiones.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="video-cta-box">
-              <a href="https://wa.me/51922694968?text=Hola%20KMT,%20deseo%20postular%20al%20equipo%20de%20ventas%20comercial" target="_blank" class="btn btn-primary btn-lg shadow-blue">
-                💼 Unirme a la Fuerza de Ventas
-              </a>
-              <a href="#ventas" class="btn btn-secondary btn-lg">
-                📈 Conocer División Ventas
-              </a>
-            </div>
+          <div class="pillar-card reveal reveal-delay-1">
+            <div class="pillar-icon">💡</div>
+            <h3>Técnicas de Venta Consultiva y Cierre</h3>
+            <p>Entrenamiento vivencial en prospección puerta a puerta (D2D), contact center, superación de objeciones y captación de altas masivas.</p>
+            <ul class="pillar-points">
+              <li>Manejo de objeciones y empatía comercial</li>
+              <li>Argumentarios y guiones comerciales probados</li>
+              <li>Digitalización de contratos y validación biométrica</li>
+            </ul>
           </div>
+
+          <div class="pillar-card reveal reveal-delay-2">
+            <div class="pillar-icon">⭐</div>
+            <h3>Motivación y Crecimiento Profesional</h3>
+            <p>Espacios de integración que fomentan la confianza, el trabajo en equipo y el desarrollo de carreras exitosas con atractivas comisiones.</p>
+            <ul class="pillar-points">
+              <li>Comisiones sin tope y bonos de productividad</li>
+              <li>Capacitaciones mensuales y premiaciones</li>
+              <li>Línea de carrera a supervisión y jefatura</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="academy-footer-cta text-center reveal">
+          <a href="https://wa.me/51922694968?text=Hola%20KMT,%20deseo%20postular%20al%20equipo%20de%20ventas%20comercial" target="_blank" class="btn btn-primary btn-lg shadow-blue">
+            💼 Postular a la Fuerza de Ventas KMT
+          </a>
+          <a href="#inicio" class="btn btn-secondary btn-lg">
+            ▶ Ver Video de Presentación al Inicio
+          </a>
         </div>
       </div>
     </div>
