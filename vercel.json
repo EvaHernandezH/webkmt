@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/webmail",
+      "destination": "https://webmail.kmtsolucion.com",
+      "permanent": false
+    },
+    {
+      "source": "/cpanel",
+      "destination": "https://cpanel.kmtsolucion.com",
+      "permanent": false
+    }
+  ]
+}
